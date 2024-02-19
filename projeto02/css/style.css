@@ -63,7 +63,7 @@ html {
 }
 .character .box div {
     position: relative;
-    bottom: 0;
+    bottom: 30px;
     width: 100%;
     padding: 1rem 0;
     text-align: center;
