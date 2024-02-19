@@ -24,7 +24,7 @@ function renderCharacters(items) {
         const divCharacters = document.createElement('div')
         
         divCharacters.innerHTML = `
-            <div class="personagem-caixa">
+            <div class="box">
                 <img src="./image/perso${index}.png" alt="Foto de ${item.name}">
                 <div>
                     <h3>${item.name}</h3>
@@ -32,6 +32,7 @@ function renderCharacters(items) {
             </div>
         `;
 
+        divCharacters.classList.add('character')
         container.appendChild(divCharacters);
     });
 }
