@@ -113,3 +113,8 @@ html {
     border: 1px solid var(--black);
     border-radius: 1rem;
 }
+
+/* person.html properties: */
+main .container {
+    /* background-color: red; */
+}
