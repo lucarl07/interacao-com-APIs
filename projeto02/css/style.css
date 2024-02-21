@@ -52,20 +52,20 @@ html {
 .character {
     background-color: var(--green-600);
 }
-.character .box {
+.character .char-box {
     text-decoration: none;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     position: relative;
 }
-.character .box img {
+.character .char-box img {
     width: 350px;
     height: 350px;
     padding: 25px;
     cursor: pointer;
 }
-.character .box div {
+.character .char-box div {
     position: relative;
     bottom: 30px;
     width: 100%;
@@ -77,7 +77,7 @@ html {
 
 /* login.html properties: */
 .form-box {
-    height: 80vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

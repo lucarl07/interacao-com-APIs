@@ -8,10 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return response.json()
     })
-    .then(data => {
-        console.log(data.results)
-        renderCharacters(data)
-    })
+    .then(data => renderCharacters(data))
     .catch(err => console.log(err))
 
 })
@@ -23,15 +20,22 @@ function renderCharacters(items) {
         const divCharacters = document.createElement('div')
         
         divCharacters.innerHTML = `
-            <div class="box">
+            <div class="char-box">
                 <img src="./image/perso${index}.png" alt="Foto de ${item.name}">
                 <div>
                     <h3>${item.name}</h3>
                 </div>
             </div>
         `;
+        divCharacters.addEventListener('click', () => {
+            detailCharacter(index)
+        })
 
         divCharacters.classList.add('character')
         container.appendChild(divCharacters);
     });
+}
+
+function detailCharacter(i) {
+    window.location.href = `./pages/person.html?index=${i}`
 }
