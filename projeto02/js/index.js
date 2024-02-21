@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', () => {
     const baseURL = "https://swapi.dev/api/people/"
 
     fetch(baseURL).then(response => {
