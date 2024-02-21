@@ -8,6 +8,30 @@
     <title>Catálogo Star Wars - Login</title>
 </head>
 <body>
-    <script src="../js/login.js"></script>
+    <header class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="navbar-brand">
+                <img src="../image/logo.png" alt="Logo da franquia Star Wars">
+            </a>
+
+            <a href="./login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="form-box">
+        <form class="form-login" action="../index.html" method="">
+            <h1>Faça seu Login:</h1>
+            
+            <label for="user">Usuário:</label>
+            <input type="text" name="user" id="getUserName" placeholder="Digite seu nome">
+
+            <label for="password">Senha:</label>
+            <input type="password" name="password" id="getUserPassword" placeholder="Digite seu nome">
+
+            <button class="btn" id="btnLogin">Login</button>
+        </form>
+    </main>
+
+    <script src="../js/login.js" type="module"></script>
 </body>
 </html>
