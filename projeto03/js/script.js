@@ -45,7 +45,9 @@ function showCharacter(characters) {
         divChar.innerHTML = `
             <img src="${char.image}" alt="Imagem de ${char.name}">
             <article class="description">
-                <h3 class="name">${char.name}</h3>
+                <h3 class="name">
+                    <a href="${char.url}">${char.name}</a> 
+                </h3>
                 <p class="info">
                     <strong>${char.status}</strong> - ${char.species}
                 </p>

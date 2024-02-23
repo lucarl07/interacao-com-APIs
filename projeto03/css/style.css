@@ -98,7 +98,9 @@ body {
 .character-box .description {
     padding: 1rem;
 }
-.character-box .description .name {
+.character-box .description .name a {
+    color: var(--gray-200);
+    text-decoration: none;
     font-size: 2rem;
 }
 .character-box .description .info {
@@ -114,7 +116,7 @@ body {
     color: var(--gray-200);
 }
 
-.character-box .name:hover, 
+.character-box .name a:hover, 
 .character-box .info a:hover {
     color: var(--orange-400);
 }
