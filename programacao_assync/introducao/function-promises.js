@@ -13,6 +13,8 @@ multiplyWithDelay(3, 3)
     console.log(`${err}`)
 })
 
+
+
 // Funções com promessas e assync await:
 function delayedResponse() {
     return new Promise(resolve => {

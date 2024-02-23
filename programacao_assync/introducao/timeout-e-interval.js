@@ -9,6 +9,8 @@ setTimeout(function() {
 
 console.log('Este é o segundo console')
 
+
+
 // Utilizando setInterval():
 setInterval(function() {
     console.log('Vou aparecer de novo em 2 segundos!')

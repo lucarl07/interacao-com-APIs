@@ -17,6 +17,8 @@ promessa.then(function(value) {
 
 console.log('Código adicional')
 
+
+
 // Listando erros em promessas:
 let mundialPalmeiras = 'nenhum'
 
@@ -28,6 +30,8 @@ let saudacao = Promise.resolve(mundialPalmeiras * 4)
 }).catch((err) => {
     console.log(`Um erro ocorreu (${err}). Por favor, revisar os dados inseridos.`)
 })
+
+
 
 // Promessa dentro de função:
 const num1 = isGreaterThan20(25)
