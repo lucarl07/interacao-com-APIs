@@ -75,7 +75,11 @@ function showCharacter(characters) {
 }
 
 function goToCharacterPage(id) {
-    console.log(id)
+    const idCrypted = encryptId(id)
 
-    window.location.href = './pages/character.html'
+    window.location.href = `./pages/character.html?id=${idCrypted}`
+}
+
+function encryptId(id) {
+    return id.toString(36)
 }
