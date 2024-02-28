@@ -6,15 +6,19 @@ const page = 4;
 const baseUrl = 'https://rickandmortyapi.com/api';
 
 const loadCharacter = async() => {
-    const res = await fetch(`${baseUrl}/character?page=${page}`);
+    const res = await fetch(`${baseUrl}/character?page=${page}`)
     const data = await res.json(),
-    limitData = data.results.slice(0,9)
+    limitData = data.results.slice(3, 9);
     return {results: limitData}
 }
+
 const loadLocation = async() => {
-    const res = await fetch(`${baseUrl}/location?page=${page}`)
-    return await res.json()
+    const res = await fetch(`${baseUrl}/location`)
+    const data = await res.json(),
+    limitData = data.results.slice(0, 10);
+    return {result: limitData};
 }
+
 const loadEpisode = async() => {
     const res = await fetch(`${baseUrl}/episode?page=${page}`)
     return await res.json()
@@ -28,8 +32,8 @@ const loadAllWithPromiseAll = async() => {
     ]);
 
     showCharacter(character.results);
-    // console.log('Locations: ', location.results)
-    // console.log('Episodes: ', episode.results)
+    showLocation(location.result);
+    // showEpisode(episode.results);
 }
 
 loadAllWithPromiseAll();
@@ -45,11 +49,14 @@ function showCharacter(characters) {
         divChar.id = `character-${char.id}`
         divChar.innerHTML = `
             <img src="${char.image}" alt="Imagem de ${char.name}">
+
             <article class="description">
                 <h3 class="name">
                     <a href="${char.url}">${char.name}</a> 
                 </h3>
+
                 <p class="info">
+                    <span class="${char.status}"><span>
                     <strong>${char.status}</strong> - ${char.species}
                 </p>
 
@@ -81,4 +88,24 @@ function goToCharacterPage(id) {
 
 function encryptId(id) {
     return id.toString(36)
+}
+
+function showLocation(locations) {
+    const locationContainer = document.getElementById('locationContainer')
+
+    locations.map(location => {
+        const divLocation = document.createElement('div')
+        
+        divLocation.innerHTML = `
+            <p class="title">${location.name}</p>
+            <p class="type">${location.type}</p>
+            <p class="dimension">${location.dimension}</p>
+            <p class="residents">${location.residents}</p>
+        `;
+
+        divLocation.classList.add('location-box')
+        locationContainer.appendChild(divLocation)
+    })
+
+    console.log(locations)
 }

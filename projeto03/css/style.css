@@ -77,11 +77,10 @@ body {
 }
 
 .characters {
+    display: grid;
     padding: 3rem 2rem;
     background-color: var(--gray-800);
     color: var(--white);
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
 }
@@ -94,7 +93,8 @@ body {
     cursor: pointer;
 }
 .character-box img {
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
     width: 200px;
 }
 .character-box .description {
@@ -106,6 +106,7 @@ body {
     font-size: 2rem;
 }
 .character-box .description .info {
+    align-items: center;
     margin-bottom: 0.75rem;
 }
 .character-box .description .info .label {
@@ -121,4 +122,35 @@ body {
 .character-box .name a:hover, 
 .character-box .info a:hover {
     color: var(--orange-400);
+}
+
+.description .Alive::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(5, 190, 5);
+    margin-right: 0.2rem;
+}
+.description .Dead::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(204, 5, 5);
+    margin-right: 0.2rem;
+}
+
+.location-section {
+    background-color: var(--gray-800);
+    text-align: center;
+}
+
+.location-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 2rem;
+    gap: 1rem;
 }
