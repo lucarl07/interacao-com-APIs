@@ -91,6 +91,7 @@ body {
     background-color: var(--gray-700);
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px #00000070;
+    cursor: pointer;
 }
 .character-box img {
     border-radius: 0.5rem 0 0 0.5rem;

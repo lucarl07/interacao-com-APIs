@@ -2,7 +2,7 @@
 // episodes:"https://rickandmortyapi.com/api/episode"
 // locations:"https://rickandmortyapi.com/api/location"
 
-const page = 1;
+const page = 4;
 const baseUrl = 'https://rickandmortyapi.com/api';
 
 const loadCharacter = async() => {
@@ -37,11 +37,12 @@ loadAllWithPromiseAll();
 function showCharacter(characters) {
 
     const charContainer = document.getElementById('charContainer')
-    console.log('Characters: ', characters)
+    // console.log('Characters: ', characters)
 
     characters.map(char => {
         const divChar = document.createElement('div')
-        
+
+        divChar.id = `character-${char.id}`
         divChar.innerHTML = `
             <img src="${char.image}" alt="Imagem de ${char.name}">
             <article class="description">
@@ -66,6 +67,15 @@ function showCharacter(characters) {
 
         divChar.classList.add('character-box')
         charContainer.appendChild(divChar)
+        divChar.addEventListener('click', async() => {
+            goToCharacterPage(char.id)
+        })
     })
 
+}
+
+function goToCharacterPage(id) {
+    console.log(id)
+
+    window.location.href = './pages/character.html'
 }
