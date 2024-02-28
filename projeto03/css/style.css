@@ -61,7 +61,8 @@ body {
     color: var(--white);
 }
 
-/* Propriedades do main: */.hero {
+/* Propriedades do main: */
+.hero {
     background-image: url('../image/hero.svg');
     background-position: center;
     height: 250px;
