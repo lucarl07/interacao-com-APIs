@@ -65,7 +65,7 @@ body {
 .hero {
     background-image: url('../image/hero.svg');
     background-position: center;
-    height: 250px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
